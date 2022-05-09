@@ -48,13 +48,13 @@ final public class CHIOTPFieldFour: CHIOTPField<CHIOTPFieldFourLabel> {
 
     //bottom border color
     @IBInspectable
-    public var borderColor: UIColor = .lightGray {
+    public var boxBorderColor: UIColor = .lightGray {
         didSet { redraw() }
     }
 
     //corner radius of the box
     @IBInspectable
-    public var cornerRadius: CGFloat = 0 {
+    public var boxCornerRadius: CGFloat = 0 {
         didSet { redraw() }
     }
 
@@ -63,8 +63,8 @@ final public class CHIOTPFieldFour: CHIOTPField<CHIOTPFieldFourLabel> {
         labels.forEach { (label) in
             label.layer.backgroundColor = boxBackgroundColor.cgColor
             label.borderHeight = borderHeight
-            label.cornerRadius = cornerRadius
-            label.borderColor = borderColor
+            label.cornerRadius = boxCornerRadius
+            label.borderColor = boxBorderColor
         }
     }
 }

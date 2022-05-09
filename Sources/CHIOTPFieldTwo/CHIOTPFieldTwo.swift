@@ -54,7 +54,7 @@ final public class CHIOTPFieldTwo: CHIOTPField<CHIOTPFieldTwoLabel> {
 
     //border color of the box in normal state
     @IBInspectable
-    public var borderColor: UIColor = .lightGray {
+    public var boxBorderColor: UIColor = .lightGray {
         didSet { redraw() }
     }
 
@@ -71,7 +71,7 @@ final public class CHIOTPFieldTwo: CHIOTPField<CHIOTPFieldTwoLabel> {
     }
 
     @IBInspectable
-    public var cornerRadius: CGFloat = 0 {
+    public var boxCornerRadius: CGFloat = 0 {
         didSet { redraw() }
     }
 
@@ -94,8 +94,8 @@ final public class CHIOTPFieldTwo: CHIOTPField<CHIOTPFieldTwoLabel> {
             label.activeBackgroundColor = activeBoxBackgroundColor
             label.filledBackgroundColor = filledBoxBackgroundColor
             label.activeBorderColor = activeBorderColor
-            label.borderColor = borderColor
-            label.cornerRadius = cornerRadius
+            label.borderColor = boxBorderColor
+            label.cornerRadius = boxCornerRadius
             label.filledBorderColor = filledBorderColor
             label.placeholder = boxPlaceholder
             label.placeholderColor = boxPlaceholderColor
