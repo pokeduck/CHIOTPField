@@ -42,13 +42,13 @@ open class CHIOTPFieldOne: CHIOTPField<CHIOTPFieldOneLabel> {
 
     //border color of the box in normal state
     @IBInspectable
-    public var borderColor: UIColor = .lightGray {
+    public var boxBorderColor: UIColor = .lightGray {
         didSet { redraw() }
     }
 
     //corner radius of the box
     @IBInspectable
-    public var cornerRadius: CGFloat = 0 {
+    public var boxCornerRadius: CGFloat = 0 {
         didSet { redraw() }
     }
 
@@ -80,8 +80,8 @@ open class CHIOTPFieldOne: CHIOTPField<CHIOTPFieldOneLabel> {
         super.redraw()
         labels.forEach { (label) in
             label.layer.backgroundColor = boxBackgroundColor.cgColor
-            label.borderColor = borderColor
-            label.cornerRadius = cornerRadius
+            label.borderColor = boxBorderColor
+            label.cornerRadius = boxCornerRadius
             label.activeShadowColor = activeShadowColor
             label.activeShadowOpacity = Float(activeShadowOpacity)
             label.placeholder = boxPlaceholder

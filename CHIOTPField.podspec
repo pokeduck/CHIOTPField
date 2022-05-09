@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.tvos.deployment_target = '12.0'
   
     s.homepage         = 'https://github.com/ChiliLabs/CHIOTPField'
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.license          = { :type => 'MIT', :file => 'License.md' }
     s.author           = { 'Chili' => 'studio@chi.lv' }
     s.source           = { :git => 'https://github.com/ChiliLabs/CHIOTPField.git', :tag => s.version.to_s }
     s.swift_version    = '5.0'
