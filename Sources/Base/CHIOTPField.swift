@@ -131,19 +131,36 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
     }
 
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard var text = self.text else {
+        
+        guard var text_ = self.text else {
             return false
         }
-
-        if string.isEmpty, text.isEmpty == false {
-            labels[text.count - 1].text = nil
-            text.removeLast()
-            self.text = text
+        
+        if #available(iOS 16.4, *) {
+            
+            if string.isEmpty, text_.isEmpty == false {
+                labels[text_.count - 1].text = nil
+                text_.removeLast()
+                self.text = text_
+            } else if text_.count < numberOfDigits {
+                self.text = text_.appending(string)
+            }
+            
             updateFocus()
             return false
-        }
+            
+        } else {
 
-        return text.count < numberOfDigits
+            if string.isEmpty, text_.isEmpty == false {
+                labels[text_.count - 1].text = nil
+                text_.removeLast()
+                self.text = text_
+                updateFocus()
+                return false
+            }
+            
+            return text_.count < numberOfDigits
+        }
     }
 
     public func textFieldDidBeginEditing(_ textField: UITextField) {
